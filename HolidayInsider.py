@@ -7,21 +7,22 @@ import holidays
 app = Flask(__name__)
 
 
-
-
 @app.route('/')
 def loadIndex():
     try:
         loc_var = holidays.__file__
-        loc_var = loc_var.split("/")
+        print(loc_var)
+        loc_var = loc_var.split("\\")
+        print(loc_var)
         loc_var.remove("__init__.py")
+        # print(loc_var)
         locationVariable = ""
         for i in loc_var:
             locationVariable = locationVariable + i + "/"
 
 
         countries = [name.split(".py")[0].replace("_", " ") for name in
-                     os.listdir(locationVariable + "holidays/countries/") if
+                     os.listdir(locationVariable + "/countries/") if
                      name.endswith(".py") and not name.startswith("__")]
 
         # print(countries)
