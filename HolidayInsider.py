@@ -88,7 +88,7 @@ def viewHolidaybyMonth():
                                    selectedCountryName=selectedCountryName , selectedMonth = selectedMonth)
 
         else:
-            msg="Please select other month"
+            msg="Please select other month and load index page"
             return render_template("index.html" , msg=msg)
 
 
