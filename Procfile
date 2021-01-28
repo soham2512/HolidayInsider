@@ -1,1 +1,1 @@
-web: gunicorn HolidayInsider:app
+web: gunicorn HolidayInsider:app --preload
