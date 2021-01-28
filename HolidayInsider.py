@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/')
 def loadIndex():
     try:
-        locationVariable = "c:/users/soham shah/anaconda3/envs/conda_holidays/lib/site-packages/"
+        locationVariable = "/usr/local/lib/python3.6/dist-packages/"
 
         countries = [name.split(".py")[0].replace("_", " ") for name in
                      os.listdir(locationVariable + "holidays/countries/") if
