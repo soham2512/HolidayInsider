@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/adminResources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/adminResources/css/style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+
+
+    <title>Holdiays Insider</title>
+</head>
+
+<body>
+
+<main role="main">
+
+
+    {#-----jumbotron----#}
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Welcome to Holidays Insider</h1><br>
+            <h5>You are Viewing Holidays List for <b>{{ selectedCountryName }}</b>
+                for <b>{{ currentYear.year }}</b> Year and {{ selectedMonth }} Month</h5>
+
+            <p><a class="btn btn-primary btn-lg mt-5" href="/" role="button">Go To Home &raquo;</a></p>
+        </div>
+    </div>
+
+
+    {#    ----table for holidays----#}
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Month and Year</th>
+                    <th scope="col">Holiday name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in holidayList %}
+                    <tr>
+                        <th scope="row">{{ row[0] }}</th>
+                        <td>{{ row[1] }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</main>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../static/adminResources/js/jquery.min.js"></script>
+<script src="../static/adminResources/js/popper.min.js"></script>
+<script src="../static/adminResources/js/bootstrap.min.js"></script>
+
+
+</body>
+
+
+</html>

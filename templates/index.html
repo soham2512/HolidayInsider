@@ -35,6 +35,106 @@
     </div>
 
 
+    {#------DisplayHolidaysByCountries----#}
+    <div class="container mb-5 text-center" id="dateBasedHolidays">
+        <h3 class="text-uppercase mt-5 bg-light p-1">display of holidays by entering COUNTRY Name.</h3>
+        <h5 class="my-5 mx-auto">
+            <ul class="text-justify">
+                <li>First Select The country from Drop-down list OR type the name of that country from the list.</li>
+                <li>Then click the submit button and holidays with Dates for that country of current year will be
+                    displayed.
+                </li>
+            </ul>
+        </h5>
+        <h4 class="mt-3 text-white bg-secondary p-2">The output will be holidays list of current year for your selected
+            country</h4>
+
+        <form class="needs-validation mt-4 text-lg"
+              action="/country/viewHoliday" method="post"
+              enctype="multipart/form-data">
+            <div class="form-row mt-5 text-center  justify-content-center">
+
+                <div class="col-md-2">
+                    <label class="text-dark bg-light p-1 text-uppercase">Enter Country - </label>
+                </div>
+                <div class="col-md-7">
+
+
+                    <select class="form-control select2" required name="countryName">
+                        {#                        <option class="disabled">Select Country</option>#}
+                        {% for country in countries %}
+                            <option class="text-center">{{ country }}</option>
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <button type="submit" class="btn-success">Show Holidays</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <hr>
+
+
+    {#------DisplayHolidaysByCountries&months----#}
+    <div class="container mb-5 text-center">
+
+        <h6 class="bg-warning">{{ msg }}</h6>
+        <h3 class="text-uppercase mt-5 bg-light p-1">display of holidays by entering COUNTRY Name and selecting
+            Month</h3>
+        <h5 class="my-5 mx-auto">
+            <ul class="text-justify">
+                <li>First Select The country from Drop-down list OR type the name of that country from the list.</li>
+                <li>Then Select The Month from Drop-down list</li>
+
+                <li>Then click the submit button and holidays with Dates for that country of selected Month of current Year  will be
+                    displayed.
+                </li>
+            </ul>
+        </h5>
+        <h4 class="mt-3 text-white bg-secondary p-2">The output will be holidays list of current year for your selected
+            country</h4>
+
+        <form class="needs-validation mt-4 text-lg"
+              action="/country/viewHolidaybyMonth" method="post"
+              enctype="multipart/form-data">
+            <div class="form-row mt-5 text-center  justify-content-center">
+
+
+                <div class="col-md-4">
+                    <input type="month" id="selectmonth" name="month" required>
+                </div>
+                <div class="col-md-5">
+
+
+                    <select class="form-control select2" required name="countryName">
+                        {#                        <option class="disabled">Select Country</option>#}
+                        {% for country in countries %}
+                            <option class="text-center">{{ country }}</option>
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <button type="submit" class="btn-success">Show Holidays</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+    <hr>
+
+
 </main>
 
 
